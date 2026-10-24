@@ -52,7 +52,7 @@ UI (Compose) → ViewModel → Repository → Room
 | Integrante | Código |
 |---|---|
 | Ariana Byanca Sofía Espinoza Castañeda | 2022073904 |
-| Hashira Belén Vargas Candia | — |
+| Hashira Belén Vargas Candia | 2022075480 |
 | Richard Podesta | — |
 | Nombre Apellido | — |
 
