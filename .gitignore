@@ -13,3 +13,14 @@
 .externalNativeBuild
 .cxx
 local.properties
+
+/.kotlin/
+
+# Archivos locales y paquetes de instalación.
+*.jks
+*.keystore
+*.apk
+*.aab
+.env
+.env.*
+!.env.example

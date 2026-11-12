@@ -1,0 +1,3 @@
+# Mantén el sdk.dir que genera Android Studio para tu equipo.
+supabase.url=https://TU_PROYECTO.supabase.co/
+supabase.publishableKey=TU_CLAVE_PUBLICABLE

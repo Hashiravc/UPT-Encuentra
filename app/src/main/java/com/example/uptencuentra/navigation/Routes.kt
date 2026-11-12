@@ -6,21 +6,18 @@ sealed class Route(val route: String) {
     data object Reports : Route("reports")
     data object ReportLost : Route("report_lost")
     data object ReportFound : Route("report_found")
-
+    data object Recovery : Route("solicitudes")
+    data object Encargado : Route("encargado")
     data object Detail : Route("object/{objectId}") {
         const val ARG = "objectId"
-        fun create(id: Int) = "object/$id"
+        fun create(id: String) = "object/${android.net.Uri.encode(id)}"
     }
     data object Matches : Route("matches/{objectId}") {
         const val ARG = "objectId"
-        fun create(id: Int) = "matches/$id"
+        fun create(id: String) = "matches/${android.net.Uri.encode(id)}"
     }
     data object Verification : Route("verification/{matchId}") {
         const val ARG = "matchId"
-        fun create(id: Int) = "verification/$id"
-    }
-    data object Recovery : Route("recovery/{matchId}") {
-        const val ARG = "matchId"
-        fun create(id: Int) = "recovery/$id"
+        fun create(id: String) = "verification/${android.net.Uri.encode(id)}"
     }
 }
