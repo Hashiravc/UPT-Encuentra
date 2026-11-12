@@ -1,9 +1,8 @@
 package com.example.uptencuentra.data.api
 
-import com.example.uptencuentra.BuildConfig
-
 object ConfiguracionSupabase {
-    val url = BuildConfig.SUPABASE_URL
-    val clavePublica = BuildConfig.SUPABASE_PUBLISHABLE_KEY
+    // Configuración del cliente; los permisos de cada usuario se validan en Supabase.
+    const val url = "https://rngqocatmdoxakqpuzxo.supabase.co/"
+    const val clavePublica = "sb_publishable_lAF9qOQ7sV6I4gnAABUXEQ__KxkQ6Oe"
     val disponible get() = url.startsWith("https://") && clavePublica.isNotBlank()
 }

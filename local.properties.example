@@ -1,3 +1,2 @@
-# Mantén el sdk.dir que genera Android Studio para tu equipo.
-supabase.url=https://TU_PROYECTO.supabase.co/
-supabase.publishableKey=TU_CLAVE_PUBLICABLE
+# Android Studio configura sdk.dir según la ubicación del SDK en tu equipo.
+# La URL y la clave publicable de Supabase están en ConfiguracionSupabase.kt.

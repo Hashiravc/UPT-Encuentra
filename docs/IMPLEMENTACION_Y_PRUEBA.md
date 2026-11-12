@@ -61,3 +61,6 @@ Compilación debug, 29 pruebas de Kotlin/Room/sincronización/motor y lint Andro
 
 ## Escenario cargado para la exposición
 Se añadieron diez reportes vinculados a las dos cuentas registradas, cinco imágenes de referencia privadas, tres solicitudes y una recepción. Consulta `ESCENARIO_EXPOSICION.md` para mostrar el recorrido desde una sola sesión. La aplicación y las pruebas de Android se compilan antes de preparar los archivos para Git; no se publican cambios remotos automáticamente.
+
+## Configuración de Supabase
+La URL y la clave publicable se editan directamente en `data/api/ConfiguracionSupabase.kt`. `NetworkModule` las utiliza para construir Retrofit y agregar el encabezado apikey. `local.properties` conserva únicamente la configuración local de Android; Gradle ya no lee claves de Supabase ni genera esos campos en BuildConfig.

@@ -1,18 +1,9 @@
-import java.util.Properties
-
 plugins {
     alias(libs.plugins.hilt)
     alias(libs.plugins.ksp)
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.compose)
 }
-
-val conexion = Properties().apply {
-    rootProject.file("local.properties").takeIf { it.exists() }?.inputStream()?.use { load(it) }
-}
-fun literal(valor: String): String = "\"" + valor.replace("\\", "\\\\").replace("\"", "\\\"") + "\""
-
-
 
 android {
     namespace = "com.example.uptencuentra"
@@ -21,8 +12,6 @@ android {
     }
 
     defaultConfig {
-        buildConfigField("String", "SUPABASE_URL", literal(conexion.getProperty("supabase.url", "https://rngqocatmdoxakqpuzxo.supabase.co/")))
-        buildConfigField("String", "SUPABASE_PUBLISHABLE_KEY", literal(conexion.getProperty("supabase.publishableKey", "")))
         applicationId = "com.example.uptencuentra"
         minSdk = 26
         targetSdk = 37
@@ -50,7 +39,6 @@ android {
 
     buildFeatures {
         compose = true
-        buildConfig = true
     }
 }
 

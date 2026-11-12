@@ -37,7 +37,7 @@ WorkManager → Sincronizador → Retrofit/Gson → Supabase → Room
 
 1. Clonar el repositorio: `git clone <URL-del-repositorio>`
 2. Abrir la carpeta en Android Studio y esperar la sincronización de Gradle.
-3. Completar `supabase.url` y `supabase.publishableKey` en `local.properties` usando `local.properties.example` como referencia. Android Studio configura su propia ruta `sdk.dir`.
+3. La URL y la clave publicable están en `app/src/main/java/com/example/uptencuentra/data/api/ConfiguracionSupabase.kt`. Android Studio configura su propia ruta `sdk.dir` en `local.properties`.
 4. Ejecutar en un emulador o dispositivo con Android 8.0 (API 26) o superior. El primer registro requiere red; no se pide confirmación del correo por enlace.
 
 ## Base de datos y prueba
@@ -45,7 +45,7 @@ WorkManager → Sincronizador → Retrofit/Gson → Supabase → Room
 - La migración está en `supabase/migrations/20261112_cuentas_fotos_recuperacion.sql`.
 - `supabase/seed_exposicion.sql` prepara un escenario adicional para las dos cuentas existentes indicadas en el script. No crea credenciales ni concede roles. Antes se deben subir las imágenes de referencia de `supabase/fixtures`, conservando sus subcarpetas, al bucket privado `fotos-reportes`.
 - Instrucciones: [Funcionamiento y archivos](docs/IMPLEMENTACION_Y_PRUEBA.md) y [Escenario de exposición](docs/ESCENARIO_EXPOSICION.md).
-- No se incluyen contraseñas, tokens, claves administrativas ni `local.properties` en Git. La aplicación usa únicamente la clave publicable del proyecto y los permisos del usuario autenticado.
+- La clave publicable del cliente está centralizada en `ConfiguracionSupabase.kt`. No se incluyen contraseñas, tokens, claves administrativas ni `local.properties` en Git. Supabase aplica los permisos del usuario autenticado.
 
 ## Documentación
 
