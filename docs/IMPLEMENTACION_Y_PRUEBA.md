@@ -3,7 +3,7 @@
 ## Acceso
 Se registra nombre, correo y contraseña mediante Supabase Auth. No se limita el dominio del correo. Supabase crea automáticamente el perfil con rol usuario. Google está desactivado y no se implementó recuperación de contraseña.
 
-El primer registro e inicio de sesión necesitan internet. Supabase mantiene activa la confirmación por correo: confirma el enlace recibido y vuelve a iniciar sesión en la app. Una sesión ya iniciada se conserva cifrada; no se almacena la contraseña. Las antiguas cuentas Google no se migran: para probar un registro nuevo utiliza otro correo.
+El primer registro e inicio de sesión necesitan internet. Supabase tiene desactivada la confirmación por correo: al registrarte se recibe una sesión y se ingresa directamente. Una sesión ya iniciada se conserva cifrada; no se almacena la contraseña. Las antiguas cuentas Google no se migran: para probar un registro nuevo utiliza otro correo.
 
 ## Sin conexión
 La pantalla observa Room. Guardar un reporte escribe reporte y pendiente en una transacción, incluso con internet. La foto se copia al almacenamiento privado del dispositivo. WorkManager envía los pendientes cuando hay red; primero sube la foto y después el reporte. La confirmación actualiza Room y retira solo la versión enviada. Un fallo conserva los datos para reintentar.
@@ -46,7 +46,7 @@ El rol encargado se asigna desde la administración, nunca desde el registro. Se
 Se conserva MVVM, Repository, Adapter e inyección de dependencias con Hilt. Los DAO son interfaces que Room implementa; trabajan con entidades concretas. No se agregaron fábricas o clases abstractas sin necesidad. Los reportes encapsulan sus cambios y conservan identidad y versión.
 
 ## Prueba breve
-1. Registrar e iniciar sesión con dos correos nuevos y confirmar los correos cuando Supabase lo solicite.
+1. Registrar e iniciar sesión con dos correos nuevos; el registro no envía un enlace de confirmación.
 2. Cuenta A: publicar una pérdida con una señal específica, por ejemplo «rayón diagonal en esquina».
 3. Cuenta B: publicar el hallazgo correspondiente, con esa señal y una foto; usar Lab-A a Lab-E como zonas.
 4. Cuenta A: abrir su pérdida, buscar candidatos y enviar una solicitud. No debe ver las pruebas privadas del hallazgo.

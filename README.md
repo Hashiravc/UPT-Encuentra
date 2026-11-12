@@ -38,7 +38,7 @@ WorkManager → Sincronizador → Retrofit/Gson → Supabase → Room
 1. Clonar el repositorio: `git clone <URL-del-repositorio>`
 2. Abrir la carpeta en Android Studio y esperar la sincronización de Gradle.
 3. Completar `supabase.url` y `supabase.publishableKey` en `local.properties` usando `local.properties.example` como referencia. Android Studio configura su propia ruta `sdk.dir`.
-4. Ejecutar en un emulador o dispositivo con Android 8.0 (API 26) o superior. El primer registro requiere red y confirmación del correo.
+4. Ejecutar en un emulador o dispositivo con Android 8.0 (API 26) o superior. El primer registro requiere red; no se pide confirmación del correo por enlace.
 
 ## Base de datos y prueba
 

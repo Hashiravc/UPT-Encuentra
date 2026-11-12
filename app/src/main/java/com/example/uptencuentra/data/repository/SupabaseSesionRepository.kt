@@ -40,7 +40,7 @@ class SupabaseSesionRepository @Inject constructor(
         mutex.withLock { conservar(api.iniciarSesion(AccesoDto(normalizarCorreo(correo), clave))) }
     }
 
-    // Devuelve false cuando Supabase requiere confirmar el correo antes de ingresar.
+    // Guarda la sesión del registro; devuelve false si el servidor no entrega credenciales de acceso.
     override suspend fun registrar(nombre: String, correo: String, clave: String): Boolean = withContext(Dispatchers.IO) {
         mutex.withLock {
             require(nombre.trim().length in 1..100 && clave.length >= 8)

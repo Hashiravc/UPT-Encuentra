@@ -34,7 +34,7 @@
     <string name="offline_demo_explanation">Modo local: puedes crear, consultar y cancelar reportes sin cuenta ni internet. Estos datos no se envían a Supabase. Después podrás asociarlos a una cuenta con tu confirmación.</string>
     <string name="demo_open_error">No se pudo abrir la demostración local. Vuelve a intentar.</string>
     <string name="access_validation">Revisa el correo, el nombre y la contraseña. Para registrarte, ambas contraseñas deben coincidir y tener al menos 8 caracteres.</string>
-    <string name="access_error">No se pudo completar el acceso. Revisa la conexión, las credenciales y la confirmación del correo.</string>
+    <string name="access_error">No se pudo completar el acceso. Revisa la conexión, el correo y la contraseña.</string>
     <string name="photo_error">Adjunta una foto válida del objeto y espera a que termine de procesarse.</string>
     <string name="in_custody">Estado: en custodia</string>
     <string name="recovered">Estado: recuperado</string>

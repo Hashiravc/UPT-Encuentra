@@ -45,7 +45,6 @@ fun LoginScreen(viewModel: SessionViewModel) {
                 modifier = Modifier.fillMaxWidth())
             if (validacion) Text(stringResource(R.string.access_validation), color = MaterialTheme.colorScheme.error)
             if (state.error) Text(stringResource(R.string.access_error), color = MaterialTheme.colorScheme.error)
-            if (state.confirmarCorreo) Text("Si el registro corresponde, recibirás un correo de confirmación. Confírmalo y luego ingresa con tu contraseña.")
             Button(enabled = !state.procesando, modifier = Modifier.fillMaxWidth(), onClick = {
                 validacion = !android.util.Patterns.EMAIL_ADDRESS.matcher(correo.trim()).matches() ||
                     clave.length < 8 || (registro && (nombre.trim().length !in 1..100 || clave != confirmacion))

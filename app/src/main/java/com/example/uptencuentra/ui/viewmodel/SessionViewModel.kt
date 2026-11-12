@@ -11,7 +11,7 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
-data class LoginState(val procesando: Boolean = false, val error: Boolean = false, val confirmarCorreo: Boolean = false)
+data class LoginState(val procesando: Boolean = false, val error: Boolean = false)
 
 @HiltViewModel
 class SessionViewModel @Inject constructor(private val sesion: SesionRepository,
@@ -27,8 +27,9 @@ class SessionViewModel @Inject constructor(private val sesion: SesionRepository,
             try {
                 val listo = if (registro) sesion.registrar(nombre, correo, clave)
                     else { sesion.iniciarSesion(correo, clave); true }
-                if (listo) sesion.usuario.value?.let { programador.programar(it.id) }
-                mutableState.value = LoginState(confirmarCorreo = !listo)
+                check(listo) { "El registro no devolvió una sesión." }
+                sesion.usuario.value?.let { programador.programar(it.id) }
+                mutableState.value = LoginState()
             } catch (cancelacion: CancellationException) { throw cancelacion
             } catch (_: Exception) { mutableState.value = LoginState(error = true) }
         }
